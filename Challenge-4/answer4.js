@@ -163,7 +163,8 @@ function findMissingNumbers1(arrayIn){
 console.log(findMissingNumbers1([8,9,10,12,13,14,15,16,17,18,20]))
 
 function findMissingNumbers1(arrayIn){
-    console.log("\nTwo--------------------------\n");    
+    console.log("\nTwo--------------------------\n");
+    console.log((arrayIn[arrayIn.length-1]-arrayIn[0]+1))
     return [...Array((arrayIn[arrayIn.length-1]-arrayIn[0]+1)).keys()].filter((elem)=>{
         return arrayIn.includes(arrayIn[0] + elem)?false:true
     }).map((elem)=>{
@@ -196,6 +197,19 @@ function capitalizeWords2(sentense){
     return sentense.replace(/(^\S|\s\S)/g, m => m.toUpperCase())
 }
 console.log(capitalizeWords2('Write a function capitalizeWords that takes a sentence as input and returns the same sentence with the first letter of each word capitalized'))
+
+function capitalizeWords3(sentense){
+    console.log("\nThree--------------------------\n");
+
+    return  sentense.split(' ').map((elem)=>{
+                return elem[0].toUpperCase() + elem.substr(1)
+            }).reduce((accumulator, currentValue) => {
+                return accumulator + ' ' + currentValue
+            },'').trim();
+
+}
+console.log(capitalizeWords3('Write a function capitalizeWords that takes a sentence as input and returns the same sentence with the first letter of each word capitalized'))
+
 
 // Exercise 10: Count Vowels
 // Write a function countVowels that counts the number of vowels in a given string.
